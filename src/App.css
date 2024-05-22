@@ -1,0 +1,22 @@
+.constainer-div {
+  display: flex;
+}
+
+.contents {
+  width: 100%;
+}
+
+.sidebar {
+  min-height: 638px;
+}
+
+.post-lists {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.h1-style {
+  min-height: 230px;
+}
