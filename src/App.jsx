@@ -9,6 +9,7 @@ import "./App.css";
 
 function App() {
   const [active, setActive] = useState("home");
+  const [filterPost, setFilteredPost] = useState([]);
 
   const handleClickHome = (e) => {
     e.preventDefault();
@@ -20,6 +21,10 @@ function App() {
     setActive("cp");
   };
 
+  const handleSearchClickEvent = (list) => {
+    setFilteredPost(() => list);
+  };
+
   return (
     <PostListContextProvider>
       <div className="constainer-div">
@@ -29,9 +34,13 @@ function App() {
           handleClickCreatePost={handleClickCreatePost}
         />
         <div className="contents">
-          <Header />
+          <Header handleSearchClickEvent={handleSearchClickEvent} />
 
-          {active == "home" ? <PostLists /> : <Createpost />}
+          {active == "home" ? (
+            <PostLists filterPost={filterPost} />
+          ) : (
+            <Createpost />
+          )}
 
           <Footer />
         </div>

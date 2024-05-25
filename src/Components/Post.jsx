@@ -77,7 +77,7 @@ export const Post = ({ item, postIndex }) => {
               <button
                 type="button"
                 className="btn btn-info"
-                style={{ margin: "5px" }}
+                style={{ margin: "5px", zIndex: "0" }}
                 ref={smileElement}
                 onClick={() => {
                   handleSmileEvent(smileElement.current, postIndex);
